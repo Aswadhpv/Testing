@@ -40,7 +40,7 @@ Parameterization is manually done by writing different test cases in the test_so
 7. Fixing Detected Bugs:
 If a test fails, the corresponding bug should be fixed in the solution.py file, and a commit message should reflect the fix, e.g., (fix) No upper limit check of the input array length.
 
-### Example Commit for Fixing a Bug
+### Example Commit for Fixing a Bug(sql)
 commit abc1234
 Author: Your Name <youremail@example.com>
 Date:   2024-06-13
@@ -56,4 +56,4 @@ All tests verify that:
 This repository ensures that the solution to the problem adheres to the constraints and behaves as expected across various test scenarios.
 
 
-### Copyrights belongs to Aswadh Puthen Veede (HITS)
+### ©Copyrights belongs to Aswadh Puthen Veede (HITS)
