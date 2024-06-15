@@ -66,6 +66,74 @@ class TestMaxAreaContainerApp(unittest.TestCase):
         except Exception as e:
             print(f"Test failed: {e}")
 
+    def test_empty_input(self):
+        driver = self.driver
+        heights_input = driver.find_element(By.ID, "heights")
+        heights_input.send_keys("")
+        heights_input.send_keys(Keys.RETURN)
+        time.sleep(2)  # Allow time for page to load
+        try:
+            error_element = driver.find_element(By.ID, "error")
+            self.assertIn("Error: Input cannot be empty.", error_element.text)
+        except Exception as e:
+            print(f"Test failed: {e}")
+
+    def test_non_numeric_input(self):
+        driver = self.driver
+        heights_input = driver.find_element(By.ID, "heights")
+        heights_input.send_keys("a,b,c")
+        heights_input.send_keys(Keys.RETURN)
+        time.sleep(2)  # Allow time for page to load
+        try:
+            error_element = driver.find_element(By.ID, "error")
+            self.assertIn("Error: Input must be numeric.", error_element.text)
+        except Exception as e:
+            print(f"Test failed: {e}")
+
+    def test_negative_numbers_input(self):
+        driver = self.driver
+        heights_input = driver.find_element(By.ID, "heights")
+        heights_input.send_keys("-1,-2,-3")
+        heights_input.send_keys(Keys.RETURN)
+        time.sleep(2)  # Allow time for page to load
+        try:
+            error_element = driver.find_element(By.ID, "error")
+            self.assertIn("Error: Heights must be non-negative.", error_element.text)
+        except Exception as e:
+            print(f"Test failed: {e}")
+
+    def test_special_characters_and_whitespace(self):
+        driver = self.driver
+        heights_input = driver.find_element(By.ID, "heights")
+
+        # Test case with special characters and whitespace
+        heights_input.send_keys("1,  8, 6, 2, 5, !, 4, 8, 3, @, 7")
+        heights_input.send_keys(Keys.RETURN)
+
+        # Wait for result or error element to be present
+        try:
+            WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "result")))
+            result_element = driver.find_element(By.ID, "result")
+            self.assertIn("Result:", result_element.text)
+        except Exception as e:
+            print(f"Test failed: {e}")
+
+    def test_responsiveness(self):
+        driver = self.driver
+        try:
+            # Wait for heights input element to be present
+            WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "heights")))
+
+            heights_input = driver.find_element(By.ID, "heights")
+            heights_input.send_keys("1,8,6,2,5,4,8,3,7")
+            heights_input.send_keys(Keys.RETURN)
+
+            # Wait for result element to be present
+            result = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "result"))).text
+            self.assertIn("Result: 49", result)
+        except Exception as e:
+            print(f"Test failed: {e}")
+
     def tearDown(self):
         self.driver.quit()
 
