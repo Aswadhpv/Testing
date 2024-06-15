@@ -59,6 +59,10 @@ The web UI is implemented in `app.py` and the HTML template is in `templates/ind
     - Fixes should be made in `solution.py` or `app.py`, with appropriate commit messages reflecting the changes.
 
 ### New Test cases
+- test_valid_input: Validates the application's response when valid input heights are provided.
+- test_min_constraints: Checks the application's behavior with the minimum required constraints.
+- test_large_input: Tests the application's performance with a large input.
+- test_invalid_input: Verifies the handling of invalid input scenarios.
 - test_empty_input: This test checks if the application correctly handles an empty input by verifying the presence of an appropriate error message.
 - test_non_numeric_input: This test verifies that the application can identify and handle non-numeric inputs, ensuring an error message is displayed.
 - test_negative_numbers_input: This test ensures that the application correctly handles negative numbers in the input and displays an appropriate error message.
