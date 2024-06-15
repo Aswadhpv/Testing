@@ -134,6 +134,15 @@ class TestMaxAreaContainerApp(unittest.TestCase):
         except Exception as e:
             print(f"Test failed: {e}")
 
+    def test_all_heights_zero(self):
+        driver = self.driver
+        heights_input = driver.find_element(By.ID, "heights")
+        heights_input.send_keys(",".join(["0"] * 10))
+        heights_input.send_keys(Keys.RETURN)
+        time.sleep(2)  # Allow time for page to load
+        result = driver.find_element(By.ID, "result").text
+        self.assertIn("Result: 0", result)
+
     def tearDown(self):
         self.driver.quit()
 
