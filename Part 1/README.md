@@ -55,5 +55,24 @@ All tests verify that:
   
 This repository ensures that the solution to the problem adheres to the constraints and behaves as expected across various test scenarios.
 
+###Test Cases
+The test_solution.py file contains a series of test cases to verify the correctness of the maxArea function. The tests include:
+
+- test_example_1: Tests the function with an example case.
+- test_different_heights: Tests the function with different varied heights.
+- test_large_numbers: Tests the function with large height numbers.
+- test_increasing_sequence: Tests the function with an increasing sequence of heights.
+- test_decreasing_sequence: Tests the function with a decreasing sequence of heights.
+- test_random_sequence: Tests the function with a random sequence of heights.
+- test_identical_heights: Tests the function with all identical heights.
+- test_two_heights: Tests the function with only two heights.
+- test_large_input_size: Tests the function with the maximum input size.
+- test_no_water: Tests the function with heights that can't hold any water.
+- test_one_height_zero: Tests the function with one height as zero.
+- test_empty_input: Tests the function with an empty input.
+- test_invalid_input_non_integer: Tests the function with invalid non-integer input.
+- test_invalid_input_negative: Tests the function with negative heights.
+- test_invalid_input_exceeds_max: Tests the function with heights exceeding the maximum allowed value.
+
 
 ### ©Copyrights belongs to Aswadh Puthen Veede (HITS)
