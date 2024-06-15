@@ -64,6 +64,7 @@ The web UI is implemented in `app.py` and the HTML template is in `templates/ind
 - test_negative_numbers_input: This test ensures that the application correctly handles negative numbers in the input and displays an appropriate error message.
 - test_special_characters_and_whitespace: This test verifies how the application handles input containing special characters and whitespace.
 - test_responsiveness: This test simulates quick user interactions to check the responsiveness of the application and verifies that the result is displayed within a reasonable time frame.
+- test_all_heights_zero: This test case checks the behavior of the application when all heights provided are zero.
 
 ## Constraints Verification
 
