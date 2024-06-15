@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Container with Most Water</title>
+</head>
+<body>
+    <h1>Find Container with Most Water</h1>
+    <form method="post" action="/calculate">
+        <label for="heights">Enter heights (comma-separated):</label>
+        <input type="text" id="heights" name="heights" value="{{ heights }}">
+        <button type="submit">Calculate</button>
+    </form>
+    {% if result is not none %}
+        <h2 id="result">Result: {{ result }}</h2>
+    {% elif error is not none %}
+        <h2 id="error" style="color: red;">Error: {{ error }}</h2>
+    {% endif %}
+</body>
+</html>
