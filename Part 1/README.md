@@ -55,7 +55,7 @@ All tests verify that:
   
 This repository ensures that the solution to the problem adheres to the constraints and behaves as expected across various test scenarios.
 
-###Test Cases
+### Test Cases
 The test_solution.py file contains a series of test cases to verify the correctness of the maxArea function. The tests include:
 
 - test_example_1: Tests the function with an example case.
